@@ -1,0 +1,473 @@
+---
+layout: layouts/base.njk
+title: Schachgemeinschaft Neuss e.V.
+---
+
+<header class="topbar">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <div class="brand-mark">
+          <img src="/assets/images/Logo_SGNeuss.jpg" alt="Logo Schachgemeinschaft Neuss e.V." />
+        </div>
+        <div class="brand-text">
+          Schachgemeinschaft Neuss e.V.
+          <small>Schach in Neuss · Jugend · Mannschaft · Verein</small>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#verein">Verein</a>
+        <a href="#aktuelles">Aktuelles</a>
+        <a href="#geschichte">Geschichte</a>
+        <a href="#training">Training</a>
+        <a href="#mannschaft">Mannschaft</a>
+        <a href="#dokumente">Dokumente</a>
+        <a href="#mitglied-werden" class="btn btn-primary">Mitglied werden</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero reveal">
+      <div class="container hero-grid">
+        <div class="panel hero-copy reveal reveal-delay-1">
+          <h1>Willkommen bei der Schachgemeinschaft Neuss</h1>
+          <p class="lead">
+            Bei uns treffen sich Menschen, die Freude am Schach haben – ganz gleich, ob sie gerade erst anfangen oder schon lange spielen. Freitags wird trainiert, gespielt, erklärt und gemeinsam über gute Züge nachgedacht. Wer Lust auf Schach hat, kann unkompliziert vorbeikommen, den Verein kennenlernen und direkt mitspielen.
+          </p>
+          <div class="hero-actions">
+            <a href="#kontakt" class="btn btn-primary">Jetzt reinschnuppern</a>
+            <a href="#training" class="btn btn-secondary">Training & Zeiten</a>
+          </div>
+        </div>
+
+        <aside class="panel hero-side reveal reveal-delay-2">
+          <div class="mini-card reveal reveal-delay-1">
+            <strong>Kinder- und Jugendtraining</strong>
+            Freitag von 17:00 bis 19:00 Uhr
+          </div>
+          <div class="mini-card reveal reveal-delay-2">
+            <strong>Vereinsabend / Spielabend</strong>
+            Freitag ab 19:00 Uhr
+          </div>
+          <div class="mini-card reveal reveal-delay-3">
+            <strong>Spiellokal</strong>
+            Malteser Jugendzentrum<br />
+            Jakob-Herbert-Str. 17<br />
+            41468 Neuss
+          </div>
+          <div class="highlight reveal reveal-delay-3">
+            <strong>Einfach vorbeikommen</strong>
+            <p>Wer Lust hat, kann jederzeit vorbeikommen und in unserem Verein das Königliche Spiel kennenlernen.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="aktuelles" class="reveal">
+      <div class="container">
+        <div class="section-head reveal reveal-delay-1">
+          <div>
+            <h2>Aktuelles</h2>
+            <p>Neuigkeiten, Hinweise und kurze Meldungen aus dem Vereinsleben.</p>
+          </div>
+        </div>
+
+        {% if collections.aktuelles and collections.aktuelles.length %}
+        <div class="news-grid">
+          {% for news in collections.aktuelles %}
+          <article class="news-item reveal">
+            {% if news.data.image %}
+            <figure class="news-image">
+              <img src="{{ news.data.image }}" alt="{{ news.data.imageAlt or news.data.title }}" />
+            </figure>
+            {% endif %}
+            <time class="news-meta" datetime="{{ news.date | dateIso }}">{{ news.date | dateDe }}</time>
+            <h3>{{ news.data.title }}</h3>
+            <p>{{ news.data.summary }}</p>
+          </article>
+          {% endfor %}
+        </div>
+        {% else %}
+        <article class="news-item reveal reveal-delay-1">
+          <p>
+            Dieser Bereich befindet sich noch im Aufbau. Hier erscheinen später aktuelle Meldungen und Informationen aus dem Vereinsleben.
+          </p>
+        </article>
+        {% endif %}
+      </div>
+    </section>
+
+    <section id="verein" class="reveal">
+      <div class="container">
+        <div class="section-head reveal reveal-delay-1">
+          <div>
+            <h2>Über den Verein</h2>
+            <p>Hier findest du kurz und einfach, wofür der Verein steht und was uns wichtig ist.</p>
+          </div>
+        </div>
+
+        <div class="grid-2 grid-verein">
+          <article class="panel card reveal reveal-delay-1">
+            <span class="tag">Wer wir sind</span>
+            <h3>Schachgemeinschaft Neuss e.V.</h3>
+            <p>
+              Die Schachgemeinschaft Neuss e.V. ist ein gemeinnütziger Verein für alle, die gern Schach spielen oder es lernen möchten. Bei uns zählen das Miteinander, die Freude am Spiel und ein offenes Vereinsleben. Kinder, Jugendliche und Erwachsene finden hier ihren Platz und erleben Schach mitten in Neuss.
+            </p>
+          </article>
+
+          <article class="panel card reveal reveal-delay-2">
+            <span class="tag">Unser Ziel</span>
+            <h3>Schach fördern</h3>
+            <p>
+              Wir möchten, dass Schach in Neuss lebendig bleibt und noch mehr Menschen dafür begeistert werden. Besonders Kinder und Jugendliche sollen das Spiel kennenlernen, damit wachsen und daran Spaß haben.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="geschichte" class="reveal">
+      <div class="container">
+        <div class="section-head reveal reveal-delay-1">
+          <div>
+            <h2>Geschichte des Vereins</h2>
+            <p>Die Geschichte der Schachgemeinschaft Neuss in kompakter Form – mit den wichtigsten Stationen und etwas mehr Hintergrund.</p>
+          </div>
+        </div>
+
+        <article class="history-article">
+          <p class="history-intro">
+            Die Geschichte des Schachs in Neuss reicht bis ins Jahr 1901 zurück. Seitdem wurde das Vereinsleben über viele
+            Jahrzehnte von engagierten Mitgliedern, Turnieren, Mannschaften und einer starken Verbundenheit zum Spiel geprägt.
+            Auch wenn sich Treffpunkte, Generationen und Schwerpunkte verändert haben, blieb eines stets gleich: die Freude am Schach.
+          </p>
+
+          <details class="history-block reveal reveal-delay-1">
+            <summary>Gründung und frühe Jahre</summary>
+            <div class="history-body">
+              <p>
+                Der Neusser Schachverein wurde 1901 gegründet. In den folgenden Jahrzehnten entwickelte sich ein aktives
+                Vereinsleben mit regelmäßigen Treffen, freien Partien sowie Vereins- und Stadtmeisterschaften. Schon früh
+                war Schach in Neuss also fest organisiert und wurde mit viel Engagement gepflegt.
+              </p>
+              <p>
+                Auch bekannte Schachmeister waren in dieser Zeit in Neuss zu Gast. So traten unter anderem Efim Bogoljubow
+                und Richard Réti im Rahmen von Simultanveranstaltungen in Erscheinung. Solche Besuche zeigen, dass der
+                Verein bereits damals über die Stadt hinaus wahrgenommen wurde.
+              </p>
+            </div>
+          </details>
+
+          <details class="history-block reveal reveal-delay-2">
+            <summary>Kriegsjahre und Neubeginn</summary>
+            <div class="history-body">
+              <p>
+                Wie viele Vereine wurde auch das Neusser Schachleben durch den Zweiten Weltkrieg stark getroffen. Der
+                Spielbetrieb kam weitgehend zum Erliegen, und vieles, was über Jahre aufgebaut worden war, ging verloren.
+              </p>
+              <p>
+                Umso bemerkenswerter war der Neubeginn nach 1945. Bereits ab 1947 nahm der Verein wieder mit Mannschaften
+                am Spielbetrieb teil. Damit begann Schritt für Schritt der Wiederaufbau eines lebendigen Vereinslebens,
+                das wieder Menschen zusammenbrachte und dem Schach in Neuss neuen Halt gab.
+              </p>
+            </div>
+          </details>
+
+          <details class="history-block reveal reveal-delay-3">
+            <summary>Jubiläen und Entwicklung in den 1950er-Jahren</summary>
+            <div class="history-body">
+              <p>
+                Ein wichtiger Meilenstein war das 50-jährige Bestehen im Jahr 1951. Solche Jubiläen zeigen nicht nur das
+                Alter eines Vereins, sondern auch seine Beständigkeit. In dieser Zeit wurde das Vereinsleben weiter stabilisiert
+                und organisatorisch gefestigt.
+              </p>
+              <p>
+                Mehrere engagierte Mitglieder prägten diese Jahre. Dazu kam, dass der Verein mit festen Treffpunkten und
+                regelmäßigen Veranstaltungen eine verlässliche Heimat für das Schach in Neuss bot. Damit entstand die Grundlage
+                für den späteren sportlichen Aufschwung.
+              </p>
+            </div>
+          </details>
+
+          <details class="history-block reveal reveal-delay-2">
+            <summary>Jugendarbeit und sportlicher Aufschwung</summary>
+            <div class="history-body">
+              <p>
+                Besonders in den 1960er-Jahren gewann die Jugendarbeit stark an Bedeutung. Junge Spieler brachten frische
+                Energie in den Verein und trugen dazu bei, dass sich auch die sportlichen Leistungen sichtbar verbesserten.
+              </p>
+              <p>
+                Ein besonderer Erfolg gelang 1961, als eine Neusser Jugendmannschaft Verbandsmeister des Niederrheins wurde.
+                Dieser Titel steht beispielhaft für eine Phase, in der die Nachwuchsarbeit nicht nur ernst genommen wurde,
+                sondern auch sehr erfolgreich war.
+              </p>
+            </div>
+          </details>
+
+          <details class="history-block reveal reveal-delay-3">
+            <summary>Turniere, Gäste und der Weg bis heute</summary>
+            <div class="history-body">
+              <p>
+                Auch in den folgenden Jahrzehnten blieb Neuss ein lebendiger Ort für das Schach. Turniere, Vereinsabende,
+                Meisterschaften und Simultanveranstaltungen mit bekannten Gästen prägten das Bild. Dabei blieb der Verein
+                nicht nur sportlich aktiv, sondern auch als Gemeinschaft wichtig.
+              </p>
+              <p>
+                Bis heute stehen genau diese Werte im Mittelpunkt: Freude am Spiel, Nachwuchsförderung, Begegnung zwischen
+                Generationen und ein offenes Vereinsleben. So verbindet die heutige Schachgemeinschaft Neuss Tradition und
+                Gegenwart auf eine Weise, die das Vereinsleben bis heute trägt.
+              </p>
+            </div>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section id="training" class="reveal">
+      <div class="container">
+        <div class="section-head reveal reveal-delay-1">
+          <div>
+            <h2>Training & Vereinsabend</h2>
+            <p>Wann was stattfindet, siehst du hier direkt und ohne langes Suchen.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel card reveal reveal-delay-1">
+            <span class="tag">Kinder & Jugend</span>
+            <h3>Freitag von 17:00 bis 19:00 Uhr</h3>
+            <p>
+              Jeden Freitag findet unser Kinder- und Jugendtraining statt. Sehr oft auch in den Schulferien. Neue Kinder und Jugendliche sind willkommen.
+            </p>
+            <ul class="list-clean">
+              <li>Geeignet für Anfänger und Fortgeschrittene.</li>
+            </ul>
+          </article>
+
+          <article class="panel card reveal reveal-delay-2">
+            <span class="tag">Erwachsene & ältere Jugendliche</span>
+            <h3>Freitag ab 19:00 Uhr</h3>
+            <p>
+              Ab 19:00 Uhr treffen sich vor allem Erwachsene und ältere Jugendliche zum gemeinsamen Spielen. In lockerer Atmosphäre kommt man gemeinsam an den Brettern zusammen, spielen freie Partien und tauschen uns über Stellungen, Ideen und Partien aus.
+            </p>
+            <ul class="list-clean">
+              <li>Ideal zum Spielen, Kennenlernen und einfachen Reinschnuppern</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="mannschaft" class="reveal">
+      <div class="container">
+        <div class="section-head reveal reveal-delay-1">
+          <div>
+            <h2>Mannschaften & Spielbetrieb</h2>
+            <p>Hier findest du die wichtigsten Informationen zu unseren Mannschaften und zu den passenden offiziellen Seiten.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel card reveal reveal-delay-1">
+            <span class="tag">Erwachsene</span>
+            <h3>Neuss 1</h3>
+            <p>
+              Unsere 1. Mannschaft spielt in der <strong>NSV Verbandsklasse Gruppe 1</strong>. Auf der offiziellen Seite findest du Spieltermine, Ergebnisse und den aktuellen Stand der Saison 2025/26.
+            </p>
+            <ul class="list-clean">
+              <li><a href="https://www.nsv1901.de/spielbetrieb/verbandsklasse-gruppe-1/" target="_blank" rel="noreferrer">Zur Verbandsklasse Gruppe 1</a></li>
+            </ul>
+          </article>
+
+          <article class="panel card reveal reveal-delay-2">
+            <span class="tag">Jugend</span>
+            <h3>Jugendmannschaft</h3>
+            <p>
+              Auch im Jugendbereich ist die Schachgemeinschaft Neuss vertreten. Über die offizielle Seite lassen sich Ranglisten und weitere Informationen zur Jugendmannschaft einsehen.
+            </p>
+            <ul class="list-clean">
+              <li><a href="https://www.sjnr.de/index.php/2025-2026/u20-jugendmannschaft-25/regionalliga-25?view=rangliste&saison=4&liga=76" target="_blank" rel="noreferrer">Zur Jugend-Rangliste 2025/26</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="dokumente" class="reveal">
+      <div class="container">
+        <div class="section-head reveal reveal-delay-1">
+          <div>
+            <h2>Dokumente & wichtige Links</h2>
+            <p>Hier sind die wichtigsten Dokumente und Links gesammelt, damit man alles schnell findet.</p>
+          </div>
+        </div>
+
+        <div class="grid-2 grid-docs">
+          <article class="panel card reveal reveal-delay-1">
+            <span class="tag">Vereinsdokumente</span>
+            <h3>Direkt zum Download</h3>
+            <ul class="list-clean">
+              <li><a href="http://www.schachgemeinschaft-neuss.de/dokumente/Satzung_2011-02-25.pdf" target="_blank" rel="noreferrer">Satzung</a></li>
+              <li><a href="http://www.schachgemeinschaft-neuss.de/dokumente/Aufnahmeantrag_SG-Neuss_2022-08.pdf" target="_blank" rel="noreferrer">Aufnahmeantrag</a></li>
+              <li><a href="http://www.schachgemeinschaft-neuss.de/dokumente/Datenschutzerklaerung-fuer-Mitglieder-des-DSB_2024-02-21.pdf" target="_blank" rel="noreferrer">DSB-Datenschutz für Mitglieder</a></li>
+            </ul>
+          </article>
+
+          <article class="panel card reveal reveal-delay-2">
+            <span class="tag">Schach-Links</span>
+            <h3>Verbände & Bezirk</h3>
+            <ul class="list-clean">
+              <li><a href="https://schachbezirk-duesseldorf.de/Aktuelles" target="_blank" rel="noreferrer">Schachbezirk Düsseldorf</a></li>
+              <li><a href="https://www.nsv1901.de/" target="_blank" rel="noreferrer">Niederrheinischer Schachverband</a></li>
+              <li><a href="https://schach-in-nrw.de/" target="_blank" rel="noreferrer">Schachbund NRW</a></li>
+              <li><a href="https://www.schachbund.de/" target="_blank" rel="noreferrer">Deutscher Schachbund</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="reveal">
+      <div class="container">
+        <div class="section-head reveal reveal-delay-1">
+          <div>
+            <h2>Vorstand & Kontakt</h2>
+            <p>Hier findest du die wichtigsten Kontaktpersonen im Verein.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="panel card reveal reveal-delay-3">
+            <span class="tag">Vereinskontakt</span>
+            <h3>Vereinsmail</h3>
+            <ul class="list-clean">
+              <li><a href="mailto:schachgemeinschaftneuss@gmail.com">schachgemeinschaftneuss@gmail.com</a></li>
+            </ul>
+          </article>
+
+          <article class="panel card reveal reveal-delay-1">
+            <span class="tag">1. Vorsitzender</span>
+            <h3>Joachim Middelkamp</h3>
+            <p>Deutzer Straße 66<br />41468 Neuss</p>
+            <ul class="list-clean">
+              <li>Tel.: 02131 - 3139836</li>
+              <li><a href="mailto:joachimmiddelkamp@gmail.com">joachimmiddelkamp@gmail.com</a></li>
+            </ul>
+          </article>
+
+          <article class="panel card reveal reveal-delay-2">
+            <span class="tag">2. Vorsitzender</span>
+            <h3>Heinz Heischkamp</h3>
+            <p>Gepaplatz 3<br />41468 Neuss</p>
+            <ul class="list-clean">
+              <li>Tel.: 02131 - 120669</li>
+              <li><a href="mailto:heinz.heischkamp@gmail.com">heinz.heischkamp@gmail.com</a></li>
+            </ul>
+          </article>
+
+          <article class="panel card reveal reveal-delay-2">
+            <span class="tag">1. Spielleiter</span>
+            <h3>Markus Neumann</h3>
+            <ul class="list-clean">
+              <li>Tel.: 02137 - 5210</li>
+              <li><a href="mailto:neumannm@uni-duesseldorf.de">neumannm@uni-duesseldorf.de</a></li>
+            </ul>
+          </article>
+
+          <article class="panel card reveal reveal-delay-3">
+            <span class="tag">1. Jugendwart</span>
+            <h3>Wolfgang Nommsen</h3>
+            <ul class="list-clean">
+              <li>Tel.: 0157 - 56238018</li>
+              <li><a href="mailto:blauer.laeufer@web.de">blauer.laeufer@web.de</a></li>
+            </ul>
+          </article>
+
+          <article class="panel card reveal reveal-delay-1">
+            <span class="tag">Kassenwart</span>
+            <h3>Alexander Geringer</h3>
+            <ul class="list-clean">
+              <li><a href="mailto:alex.geringer@web.de">alex.geringer@web.de</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="mitglied-werden" class="reveal">
+      <div class="container">
+        <div class="section-head reveal reveal-delay-1">
+          <div>
+            <h2>Mitglied werden</h2>
+            <p>Wenn du mal reinschauen möchtest, findest du hier die wichtigsten Infos dazu.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel card reveal reveal-delay-1">
+            <span class="tag">Neue Mitglieder willkommen</span>
+            <h3>Einfach freitags vorbeikommen</h3>
+            <p>
+              Wenn du Schach interessant findest, kannst du freitags einfach vorbeikommen und den Verein kennenlernen. Du kannst in Ruhe reinschauen, mitspielen und erste Eindrücke sammeln.
+            </p>
+            <ul class="list-clean">
+              <li>Zum ersten Kennenlernen ist keine komplizierte Anmeldung nötig</li>
+            </ul>
+          </article>
+
+          <article class="panel card reveal reveal-delay-2">
+            <span class="tag">Mitgliedsbeiträge 2025</span>
+            <h3>Mitgliedsbeiträge im Überblick</h3>
+            <ul class="list-clean">
+              <li>Erwachsene: 80 € pro Jahr</li>
+              <li>Sozial ermäßigt: 40 € pro Jahr</li>
+              <li>Kinder/Jugendliche: 40 € pro Jahr</li>
+            </ul>
+            <p style="margin-top:.8rem; color: var(--muted);">
+              Den Aufnahmeantrag findest du weiter oben direkt im Bereich „Dokumente & wichtige Links“.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta reveal">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <h2>Schau einfach vorbei.</h2>
+            <p>Freitag ist bei uns Schachtag. Komm vorbei, spiel mit und lern den Verein in Ruhe kennen.</p>
+          </div>
+          <a href="mailto:schachgemeinschaftneuss@gmail.com" class="btn">Jetzt Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="reveal">
+    <div class="container grid-2 grid-footer">
+      <div class="panel footer-panel reveal reveal-delay-1">
+        <h3>Impressum</h3>
+        <p class="small">
+          Schachgemeinschaft Neuss e.V.<br />
+          Joachim Middelkamp<br />
+          Deutzer Straße 66<br />
+          41468 Neuss<br /><br />
+          Registergericht: Amtsgericht Neuss<br />
+          Registernummer: VR 2140
+        </p>
+      </div>
+
+      <div class="panel footer-panel reveal reveal-delay-2">
+        <h3>Rechtliches</h3>
+        <ul class="footer-links">
+          <li><a href="http://www.schachgemeinschaft-neuss.de/dokumente/Satzung_2011-02-25.pdf" target="_blank" rel="noreferrer">Satzung</a></li>
+          <li><a href="http://www.schachgemeinschaft-neuss.de/dokumente/Aufnahmeantrag_SG-Neuss_2022-08.pdf" target="_blank" rel="noreferrer">Aufnahmeantrag</a></li>
+          <li><a href="http://www.schachgemeinschaft-neuss.de/dokumente/Datenschutzerklaerung-fuer-Mitglieder-des-DSB_2024-02-21.pdf" target="_blank" rel="noreferrer">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
