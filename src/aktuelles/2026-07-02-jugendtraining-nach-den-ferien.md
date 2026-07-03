@@ -1,10 +1,10 @@
 ---
-title: Jugendtraining nach den Ferien
-date: 2026-07-03
-summary: Das Kinder- und Jugendtraining findet wieder wie gewohnt freitags statt.
+title: Vereinsabend am Freitag
+date: 2026-06-28
+summary: Auch am kommenden Freitag treffen wir uns wieder zum gemeinsamen Spielen.
 ---
-Nach den Ferien geht es mit dem Kinder- und Jugendtraining wieder weiter. Neue Kinder und Jugendliche sind willkommen und können gerne freitags vorbeikommen.
+Unser Vereinsabend findet wie gewohnt am Freitag ab 19:00 Uhr statt.
 
 
 
-Das Training findet von 17:00 bis 19:00 Uhr im Malteser Jugendzentrum statt.
+In lockerer Atmosphäre kommen Erwachsene und ältere Jugendliche an den Brettern zusammen. Gäste und Interessierte können gerne vorbeischauen.
