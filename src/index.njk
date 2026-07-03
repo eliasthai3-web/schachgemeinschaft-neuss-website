@@ -94,18 +94,18 @@ title: Schachgemeinschaft Neuss e.V.
         {% if collections.aktuelles and collections.aktuelles.length %}
         <div class="news-grid">
           {% for news in collections.aktuelles %}
-          {% if loop.index <= 2 %}
+          {% if loop.index <= 3 %}
           {{ newsCard(news) }}
           {% endif %}
           {% endfor %}
         </div>
 
-        {% if collections.aktuelles.length > 2 %}
+        {% if collections.aktuelles.length > 3 %}
         <details class="news-archive">
           <summary>Weitere Meldungen anzeigen</summary>
           <div class="news-grid news-archive-grid">
             {% for news in collections.aktuelles %}
-            {% if loop.index > 2 %}
+            {% if loop.index > 3 %}
             {{ newsCard(news) }}
             {% endif %}
             {% endfor %}
