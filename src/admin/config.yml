@@ -14,7 +14,7 @@ collections:
     create: true
     extension: "md"
     format: "frontmatter"
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     sortable_fields: ["date", "title"]
     fields:
       - label: "Überschrift"
