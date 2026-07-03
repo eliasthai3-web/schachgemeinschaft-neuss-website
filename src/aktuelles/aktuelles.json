@@ -1,0 +1,4 @@
+{
+  "layout": "layouts/news.njk",
+  "permalink": "/aktuelles/{{ page.fileSlug }}/index.html"
+}

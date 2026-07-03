@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+---
+
+<header class="topbar">
+  <div class="container nav">
+    <a href="/#top" class="brand">
+      <div class="brand-mark">
+        <img src="/assets/images/Logo_SGNeuss.jpg" alt="Logo Schachgemeinschaft Neuss e.V." />
+      </div>
+      <div class="brand-text">
+        Schachgemeinschaft Neuss e.V.
+        <small>Schach in Neuss · Jugend · Mannschaft · Verein</small>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="/#verein">Verein</a>
+      <a href="/#aktuelles">Aktuelles</a>
+      <a href="/#geschichte">Geschichte</a>
+      <a href="/#training">Training</a>
+      <a href="/#mannschaft">Mannschaft</a>
+      <a href="/#dokumente">Dokumente</a>
+      <a href="/#mitglied-werden" class="btn btn-primary">Mitglied werden</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">☰</button>
+  </div>
+</header>
+
+<main id="top" class="news-detail-page">
+  <article class="container news-detail">
+    <header class="news-detail-header">
+      <time class="news-meta" datetime="{{ date | dateIso }}">{{ date | dateDe }}</time>
+      <h1>{{ title }}</h1>
+    </header>
+
+    {% if image %}
+    <figure class="news-detail-image">
+      <img src="{{ image }}" alt="{{ imageAlt or title }}" />
+    </figure>
+    {% endif %}
+
+    <div class="news-detail-content">
+      {{ content | safe }}
+    </div>
+
+    <a class="btn btn-secondary news-back-button" href="/#aktuelles">Zurück zu Aktuelles</a>
+  </article>
+</main>

@@ -4,9 +4,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/admin/config.yml": "admin/config.yml" });
 
   eleventyConfig.addCollection("aktuelles", (collectionApi) => {
+    const timestamp = (item) => {
+      const value = item.data?.date ?? item.date;
+      const parsed = new Date(value).getTime();
+      return Number.isNaN(parsed) ? 0 : parsed;
+    };
+
     return collectionApi
       .getFilteredByGlob("src/aktuelles/*.md")
-      .sort((a, b) => b.date - a.date);
+      .sort((a, b) => timestamp(b) - timestamp(a));
   });
 
   eleventyConfig.addFilter("dateDe", (value) => {

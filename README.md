@@ -39,6 +39,8 @@ Hier steht später der vollständige Text der Meldung.
 
 Für ein Bild wird bei `image` später beispielsweise `/assets/uploads/dateiname.jpg` eingetragen. Ohne News-Datei zeigt die Startseite weiterhin den Aufbau-Hinweis.
 
+Jede Markdown-Datei erhält automatisch eine Detailseite unter `/aktuelles/DATEINAME/`. Der vollständige Markdown-Inhalt wird dort ausgegeben; die Startseite zeigt Datum, Bild, Überschrift, Kurztext und einen „Weiterlesen“-Link.
+
 ## Decap CMS vorbereiten
 
 Nach dem lokalen Start ist der vorbereitete Adminbereich unter `http://localhost:8080/admin/` erreichbar.

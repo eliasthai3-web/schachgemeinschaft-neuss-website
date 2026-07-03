@@ -3,6 +3,22 @@ layout: layouts/base.njk
 title: Schachgemeinschaft Neuss e.V.
 ---
 
+{% macro newsCard(news) %}
+<article class="news-item reveal">
+  {% if news.data.image %}
+  <figure class="news-image">
+    <img src="{{ news.data.image }}" alt="{{ news.data.imageAlt or news.data.title }}" />
+  </figure>
+  {% endif %}
+  <div class="news-card-body">
+    <time class="news-meta" datetime="{{ news.data.date | dateIso }}">{{ news.data.date | dateDe }}</time>
+    <h3><a class="news-title-link" href="{{ news.url }}">{{ news.data.title }}</a></h3>
+    <p class="news-summary">{{ news.data.summary }}</p>
+    <a class="btn btn-secondary news-read-more" href="{{ news.url }}">Weiterlesen</a>
+  </div>
+</article>
+{% endmacro %}
+
 <header class="topbar">
     <div class="container nav">
       <a href="#top" class="brand">
@@ -78,18 +94,24 @@ title: Schachgemeinschaft Neuss e.V.
         {% if collections.aktuelles and collections.aktuelles.length %}
         <div class="news-grid">
           {% for news in collections.aktuelles %}
-          <article class="news-item reveal">
-            {% if news.data.image %}
-            <figure class="news-image">
-              <img src="{{ news.data.image }}" alt="{{ news.data.imageAlt or news.data.title }}" />
-            </figure>
-            {% endif %}
-            <time class="news-meta" datetime="{{ news.date | dateIso }}">{{ news.date | dateDe }}</time>
-            <h3>{{ news.data.title }}</h3>
-            <p>{{ news.data.summary }}</p>
-          </article>
+          {% if loop.index <= 2 %}
+          {{ newsCard(news) }}
+          {% endif %}
           {% endfor %}
         </div>
+
+        {% if collections.aktuelles.length > 2 %}
+        <details class="news-archive">
+          <summary>Weitere Meldungen anzeigen</summary>
+          <div class="news-grid news-archive-grid">
+            {% for news in collections.aktuelles %}
+            {% if loop.index > 2 %}
+            {{ newsCard(news) }}
+            {% endif %}
+            {% endfor %}
+          </div>
+        </details>
+        {% endif %}
         {% else %}
         <article class="news-item reveal reveal-delay-1">
           <p>
