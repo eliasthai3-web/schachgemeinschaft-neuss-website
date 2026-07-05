@@ -82,6 +82,22 @@ title: Schachgemeinschaft Neuss e.V.
       </div>
     </section>
 
+    <section class="neuss-feature reveal">
+      <div class="container neuss-feature-grid">
+        <div class="neuss-feature-copy reveal reveal-delay-1">
+          <h2>Schach mitten in Neuss</h2>
+          <p>
+            Ob im Vereinsraum, bei Turnieren oder bei besonderen Aktionen: Schach bringt Menschen zusammen und macht das Königliche Spiel in Neuss sichtbar.
+          </p>
+        </div>
+
+        <figure class="neuss-feature-figure reveal reveal-delay-2">
+          <img src="/assets/images/schach-in-neuss.jpg" alt="Schachveranstaltung im öffentlichen Leben in Neuss" />
+          <figcaption>Schachveranstaltung in Neuss – Schach mitten im öffentlichen Leben.</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section id="aktuelles" class="reveal">
       <div class="container">
         <div class="section-head reveal reveal-delay-1">
@@ -94,18 +110,18 @@ title: Schachgemeinschaft Neuss e.V.
         {% if collections.aktuelles and collections.aktuelles.length %}
         <div class="news-grid">
           {% for news in collections.aktuelles %}
-          {% if loop.index <= 2 %}
+          {% if loop.index <= 3 %}
           {{ newsCard(news) }}
           {% endif %}
           {% endfor %}
         </div>
 
-        {% if collections.aktuelles.length > 2 %}
+        {% if collections.aktuelles.length > 3 %}
         <details class="news-archive">
           <summary>Weitere Meldungen anzeigen</summary>
           <div class="news-grid news-archive-grid">
             {% for news in collections.aktuelles %}
-            {% if loop.index > 2 %}
+            {% if loop.index > 3 %}
             {{ newsCard(news) }}
             {% endif %}
             {% endfor %}
