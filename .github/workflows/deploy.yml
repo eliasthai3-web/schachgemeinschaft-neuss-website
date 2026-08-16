@@ -1,4 +1,4 @@
-name: Deploy website via FTP
+name: Deploy website via SFTP
 
 on:
   push:
@@ -31,20 +31,14 @@ jobs:
       - name: Build Eleventy site
         run: pnpm run build
 
-      - name: Deploy _site to FTP server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy _site via SFTP/SSH
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
-          port: 21
-          local-dir: ./_site/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            sitecontrol/**
-            sitecontrol/**/*
-            .htaccess
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: ${{ secrets.SFTP_PORT }}
+          source: "_site/*"
+          target: ${{ secrets.SFTP_TARGET_DIR }}
+          strip_components: 1
+          overwrite: true
