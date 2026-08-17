@@ -285,8 +285,8 @@
     .neuss-feature-figure img {
       width: 100%;
       height: 560px;
-      object-fit: contain;
-      background: var(--surface);
+      object-fit: cover;
+      object-position: center;
       border: 1px solid var(--line);
       border-radius: var(--radius);
     }
@@ -775,7 +775,7 @@
       }
 
       .neuss-feature-figure img {
-        height: auto;
+        height: min(72vh, 520px);
         max-height: 70vh;
       }
 
