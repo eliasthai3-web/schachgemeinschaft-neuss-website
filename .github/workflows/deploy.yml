@@ -50,3 +50,5 @@ jobs:
             **/node_modules/**
             sitecontrol/**
             sitecontrol/**/*
+            oauth/**
+            oauth/**/*
