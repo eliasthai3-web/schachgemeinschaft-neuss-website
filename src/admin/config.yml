@@ -2,6 +2,8 @@ backend:
   name: github
   repo: eliasthai3-web/schachgemeinschaft-neuss-website
   branch: main
+  base_url: https://schachgemeinschaft-neuss.de
+  auth_endpoint: oauth/auth
 
 media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
