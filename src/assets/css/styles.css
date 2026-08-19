@@ -706,6 +706,41 @@
       }
     }
 
+    #dokumente {
+      padding-bottom: 1.55rem;
+    }
+
+    #dokumente .section-head {
+      margin-bottom: 1rem;
+    }
+
+    #dokumente .grid-docs {
+      gap: .95rem;
+    }
+
+    #dokumente .card {
+      padding: 1.05rem 1.1rem;
+    }
+
+    #dokumente .tag {
+      font-size: .9rem;
+      padding: .38rem .72rem;
+      margin-bottom: .65rem;
+    }
+
+    #dokumente h3 {
+      font-size: 1.05rem;
+      margin-bottom: .65rem;
+    }
+
+    #dokumente .list-clean {
+      margin-top: .65rem;
+    }
+
+    #dokumente .list-clean li {
+      margin-bottom: .4rem;
+    }
+
     #kontakt .grid-3 {
       gap: .9rem;
     }
