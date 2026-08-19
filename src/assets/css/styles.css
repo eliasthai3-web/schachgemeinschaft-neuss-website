@@ -346,6 +346,7 @@
     .grid-docs { grid-template-columns: 1fr 1fr; }
     .grid-footer { grid-template-columns: 1fr; }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-2.grid-footer { grid-template-columns: 1fr; }
     .grid-verein { grid-template-columns: 1fr 1fr; }
     .footer-grid { grid-template-columns: 1.1fr 1fr 1fr; }
 
