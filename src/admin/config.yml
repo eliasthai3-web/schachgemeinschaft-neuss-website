@@ -31,7 +31,7 @@ collections:
       - label: "Kurztext"
         name: "summary"
         widget: "text"
-      - label: "Bild"
+      - label: "Titelbild"
         name: "image"
         widget: "image"
         required: false
@@ -39,6 +39,18 @@ collections:
         name: "imageAlt"
         widget: "string"
         required: false
+      - label: "Weitere Fotos"
+        name: "gallery"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Foto"
+            name: "image"
+            widget: "image"
+          - label: "Bildbeschreibung"
+            name: "caption"
+            widget: "string"
+            required: false
       - label: "Inhalt"
         name: "body"
         widget: "markdown"

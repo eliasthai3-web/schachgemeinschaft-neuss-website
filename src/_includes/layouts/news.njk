@@ -45,6 +45,24 @@ layout: layouts/base.njk
       {{ content | safe }}
     </div>
 
+    {% if gallery and gallery.length %}
+    <section class="news-gallery" aria-labelledby="news-gallery-title">
+      <h2 id="news-gallery-title">Bildergalerie</h2>
+      <div class="news-gallery-grid">
+        {% for item in gallery %}
+        {% if item.image %}
+        <figure class="news-gallery-item">
+          <img src="{{ item.image }}" alt="{{ item.caption or title }}" />
+          {% if item.caption %}
+          <figcaption>{{ item.caption }}</figcaption>
+          {% endif %}
+        </figure>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
     <a class="btn btn-secondary news-back-button" href="/#aktuelles">Zurück zu Aktuelles</a>
   </article>
 </main>
